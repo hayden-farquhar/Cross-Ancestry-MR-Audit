@@ -26,8 +26,7 @@
     {
       "identifier": "10.17605/OSF.IO/U8TX4",
       "relation": "isSupplementTo",
-      "scheme": "doi",
-      "resource_type": "publication-preregistration"
+      "scheme": "doi"
     }
   ],
   "access_right": "open"
