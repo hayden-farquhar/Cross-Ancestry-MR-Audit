@@ -112,8 +112,11 @@ Rscript scripts/11_mr_apss_vs_ivw.R
 # 12. Multivariable lipid MR for HDL → CAD (~15 minutes; reads 3 lipid GWAS)
 Rscript scripts/12_mvmr_lipid_cad.R
 
-# 13. Manuscript figures 1–3 (PRISMA flow, headline forest, H2 strip) (~30 seconds)
-python3 scripts/13_produce_manuscript_figures.py
+# 13. SuSiE multi-variant colocalisation for Lp(a) → CAVS LPA region (~5 min)
+Rscript scripts/13_susie_coloc_lpa.R
+
+# 14. Manuscript figures 1–3 (PRISMA flow, headline forest, H2 strip) (~30 seconds)
+python3 scripts/14_produce_manuscript_figures.py
 ```
 
 Optional: launch the interactive results dashboard.
@@ -139,7 +142,8 @@ streamlit run app/streamlit_app.py
 | `scripts/10_make_figures.R` | Per-pair forest plots showing MR-APSS + sensitivity panel | 15 `forest_*.png` |
 | `scripts/11_mr_apss_vs_ivw.R` | H2 descriptive: per-stratum MR-APSS vs IVW divergence | `outputs/tables/mr_apss_vs_ivw.csv` |
 | `scripts/12_mvmr_lipid_cad.R` | Pre-registered multivariable MR (HDL\|TG,LDL → CAD) | `outputs/tables/mvmr_lipid_cad.csv` |
-| `scripts/13_produce_manuscript_figures.py` | Figures 1 (PRISMA), 2 (headline forest), 3 (H2 strip) | 3 PNGs at `outputs/figures/figure_{1,2,3}_*.png` |
+| `scripts/13_susie_coloc_lpa.R` | SuSiE-based multi-variant colocalisation for Lp(a) → CAVS LPA region | `outputs/tables/susie_coloc_lpa.csv` |
+| `scripts/14_produce_manuscript_figures.py` | Figures 1 (PRISMA), 2 (headline forest), 3 (H2 strip) | 3 PNGs at `outputs/figures/figure_{1,2,3}_*.png` |
 | `scripts/utils.R` | Shared helpers: paths, schema-aware sumstats readers, LD canonicalisation | — |
 | `scripts/audit_data_presence.sh` | Verify every required input file exists + parses | exit 0 = clean |
 | `tests/test_parsers.R` | Smoke tests for the 10 schema-aware sumstats parsers | console output |
@@ -163,6 +167,7 @@ streamlit run app/streamlit_app.py
 | `outputs/tables/heterogeneity_meta.csv` | §3.4 (IVW-based H1 sensitivity) |
 | `outputs/tables/mr_apss_vs_ivw.csv` | Manuscript Table 4 + §3.7 (H2 descriptive) |
 | `outputs/tables/mvmr_lipid_cad.csv` | §3.3 multivariable lipid MR |
+| `outputs/tables/susie_coloc_lpa.csv` | §4.4 SuSiE-coloc LPA-region multi-variant colocalisation |
 
 ## Citation
 

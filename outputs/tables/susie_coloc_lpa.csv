@@ -1,0 +1,5 @@
+pair,method,hit1,hit2,idx1,idx2,PP.H0.abf,PP.H1.abf,PP.H2.abf,PP.H3.abf,PP.H4.abf
+LPA_CAVS_EUR,SuSiE-coloc,rs7761293,rs7760585,1,1,0,0,0,1,0
+LPA_CAVS_EUR,SuSiE-coloc,rs3127595,rs7760585,2,1,0,0,0,1,0
+LPA_CAVS_EUR,SuSiE-coloc,rs7761293,rs1321196,1,2,0,0,0,1,0
+LPA_CAVS_EUR,SuSiE-coloc,rs3127595,rs1321196,2,2,0,0,0,1,0

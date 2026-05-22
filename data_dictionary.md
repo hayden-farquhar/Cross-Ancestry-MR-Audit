@@ -159,6 +159,19 @@ Multivariable lipid MR (LDL + HDL + TG → CAD) using the Burgess 2015 weighted 
 | `pval_cond` | Two-sided p-value |
 | `n_snps` | Number of independent SNPs in the multivariable instrument set |
 
+## `susie_coloc_lpa.csv`
+
+SuSiE-based multi-variant colocalisation for the Lp(a) → CAVS LPA-region pair (§4.4 of accompanying manuscript). One row per (exposure credible set × outcome credible set) pair.
+
+| Column | Description |
+|---|---|
+| `pair` | Always `LPA_CAVS_EUR` |
+| `method` | Always `SuSiE-coloc` |
+| `hit1` | Lead variant (rsID) of the exposure credible set |
+| `hit2` | Lead variant (rsID) of the outcome credible set |
+| `idx1` / `idx2` | Credible-set indices in the exposure / outcome SuSiE fits |
+| `PP.H0.abf` – `PP.H4.abf` | Posterior probabilities of the five colocalisation hypotheses (no causal variant / only exposure / only outcome / two independent causal variants / one shared causal variant) |
+
 ## `mvmr_lipid_cad_harmonised.csv`
 
 Per-instrument harmonised multi-exposure data underlying the MVMR fit (one row per instrument retained after r²<0.001 clumping + cross-lipid + outcome matching + LDL-effect-allele frame alignment).
