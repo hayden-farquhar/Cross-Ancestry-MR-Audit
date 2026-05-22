@@ -1,0 +1,7 @@
+# Python dependencies for scripts/13_produce_manuscript_figures.py and
+# app/streamlit_app.py. R dependencies are pinned in renv.lock and installed
+# via scripts/00_setup_renv.R.
+
+matplotlib>=3.7,<4.0
+pandas>=2.0,<3.0
+streamlit>=1.30,<2.0

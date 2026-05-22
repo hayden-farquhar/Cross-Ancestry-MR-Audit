@@ -1,0 +1,2 @@
+pair,n_ancestries,test_kind,Cochran_Q,Cochran_Q_pval,I2_pct,method_used,pval_Bonferroni,pval_BH,sig_at_Bonferroni_05,sig_at_BH_05
+HBA1C_T2D,2,Pairwise Q (k=2),0.010972953853274,0.916572703595003,0,Inverse variance weighted,0.916572703595003,0.916572703595003,FALSE,FALSE

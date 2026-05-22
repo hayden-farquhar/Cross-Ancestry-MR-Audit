@@ -1,0 +1,34 @@
+{
+  "title": "Cross-ancestry portability of canonical Mendelian randomization estimates — analysis code",
+  "upload_type": "software",
+  "description": "<p>Pre-registered audit of ten canonical Mendelian randomization (MR) exposure–outcome pairs (LDL → CAD, urate → gout, BMI → T2D, BP → stroke, Lp(a) → CAVS, HbA1c → T2D, lipid → stroke-subtype) across European, East Asian, and African ancestries. Primary estimator is MR-APSS; sensitivity panel includes IVW, MR-Egger, weighted median, weighted mode, MR-PRESSO, Radial-MR, multivariable lipid MR, and colocalisation (coloc.abf). Repository contains the full analysis pipeline (R + Python) sufficient to reproduce every quantitative result, table, and figure in the accompanying manuscript. Manuscript-preparation and submission scripts are intentionally excluded.</p>",
+  "creators": [
+    {
+      "name": "Farquhar, Hayden",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0002-6226-440X"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Mendelian randomization",
+    "cross-ancestry",
+    "polygenic risk scores",
+    "MR-APSS",
+    "colocalisation",
+    "equity of evidence",
+    "pre-registration",
+    "reproducibility",
+    "GWAS",
+    "horizontal pleiotropy"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.17605/OSF.IO/U8TX4",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-preregistration"
+    }
+  ],
+  "access_right": "open"
+}

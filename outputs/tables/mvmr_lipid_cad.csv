@@ -1,0 +1,4 @@
+exposure,estimator,b_cond,se_cond,pval_cond,n_snps
+LDL,MVMR-IVW,0.3927,0.0406,3.548e-22,338
+HDL,MVMR-IVW,-0.0904,0.0384,0.01856,338
+TG,MVMR-IVW,0.2888,0.0581,6.693e-07,338

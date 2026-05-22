@@ -1,0 +1,36 @@
+# Raw and intermediate data — large and acquired via instructions in data/raw/README.md
+data/raw/exposures/
+data/raw/outcomes/
+data/ld_panels/1000G_*/
+data/ld_panels/ldscores/
+data/processed/*.rds
+data/processed/*.jsonl
+
+# R bookkeeping
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+renv/staging/
+renv/python/
+renv/local/
+
+# Python bookkeeping
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Editor backups
+*~
+*.bak
+*.swp
