@@ -8,6 +8,8 @@ Analysis code repository for the pre-registered audit of ten canonical Mendelian
 
 **Preprint:** to be posted; this README will be updated with the preprint DOI on deposit.
 
+**Zenodo archive:** concept DOI [10.5281/zenodo.20340928](https://doi.org/10.5281/zenodo.20340928) (cite-all-versions); v0.1.0 specific DOI [10.5281/zenodo.20340929](https://doi.org/10.5281/zenodo.20340929).
+
 ## Overview
 
 The study is a pre-registered, multi-pair, multi-ancestry audit of canonical MR-derived causal claims (LDL → CAD, urate → gout, BMI → T2D, BP → stroke, Lp(a) → CAVS, HbA1c → T2D, lipid → stroke-subtype) using MR-APSS as the primary estimator alongside a seven-method sensitivity panel, colocalisation (`coloc.abf`), multivariable lipid MR, and pre-specified cross-ancestry heterogeneity testing.
@@ -169,8 +171,9 @@ If you use this code, please cite the accompanying manuscript and this repositor
 ```
 Farquhar H. Cross-ancestry portability of canonical Mendelian randomization
 estimates: a pre-registered audit reveals a structural evidence-base gap.
-Preprint: to be posted. Code: [Zenodo DOI to be minted via GitHub release].
-Pre-registration: OSF DOI 10.17605/OSF.IO/U8TX4.
+Preprint: to be posted. Code: https://doi.org/10.5281/zenodo.20340928
+(concept DOI; cite-all-versions). Pre-registration: OSF DOI
+10.17605/OSF.IO/U8TX4.
 ```
 
 ## License
