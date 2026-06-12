@@ -1,0 +1,4 @@
+exposure,conditioned_on,conditional_F,method,n_instruments,threshold,interpretation
+LDL,"HDL, TG",99.63,Sanderson-Windmeijer 2019,338,10,strong instrument
+HDL,"LDL, TG",100.33,Sanderson-Windmeijer 2019,338,10,strong instrument
+TG,"LDL, HDL",56.66,Sanderson-Windmeijer 2019,338,10,strong instrument

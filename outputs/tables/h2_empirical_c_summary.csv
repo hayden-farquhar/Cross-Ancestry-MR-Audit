@@ -1,0 +1,8 @@
+statistic,value,note
+mean |dbeta| high (empirical |C|>=0.03),0.1232,n=7
+mean |dbeta| low (empirical C<0.02),0.1365,n=11
+mean |dbeta| mid (0.02-0.03),0.1091,n=6
+"Spearman rho (|C_off|, |dbeta|)",-0.035,p=0.872
+"Pearson r (|C_off|, |dbeta|)",0.016,p=0.942
+n pairs,24,all pair x ancestry slots with MR-APSS + IVW
+interpretation,weak inverted trend; not significant after multiplicity,supersedes manuscript Sec 3.7/4.1 'dramatic H2 inversion' claim

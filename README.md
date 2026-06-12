@@ -1,6 +1,6 @@
 # Cross-ancestry portability of canonical Mendelian randomization estimates
 
-Analysis code repository for the pre-registered audit of ten canonical Mendelian randomization exposure–outcome pairs across European, East Asian, and African-ancestry populations.
+Analysis code repository for the pre-registered audit of canonical Mendelian randomization exposure–outcome pairs across European and East-Asian ancestries (African-ancestry arm power-limited). The headline result is a larger East-Asian urate→gout causal effect (per 1-SD urate, log-odds slope ratio ~1.9×), the single cross-ancestry exception among seven testable pairs, robust to leaving the ABCG2 and SLC2A9 transporter loci out of both arms. Post-hoc robustness analyses comprise a leave-one-locus-out decomposition, a TOST equivalence test of all pairs, a liability-scale conversion, and an LDSC-free overlap-bias bound.
 
 **Author:** Hayden Farquhar MBBS MPHTM (Independent Researcher, Finley, NSW, Australia). ORCID [0009-0002-6226-440X](https://orcid.org/0009-0002-6226-440X).
 
@@ -117,6 +117,17 @@ Rscript scripts/13_susie_coloc_lpa.R
 
 # 14. Manuscript figures 1–3 (PRISMA flow, headline forest, H2 strip) (~30 seconds)
 python3 scripts/14_produce_manuscript_figures.py
+
+# 15–18. Post-hoc robustness analyses for the urate→gout cross-ancestry exception
+Rscript scripts/15_loo_urate_locus.R      # leave-ABCG2/SLC2A9-out + per-locus Wald
+Rscript scripts/16_tost_equivalence.R     # TOST equivalence for the seven pairs
+Rscript scripts/17_liability_scale.R      # liability- and risk-difference-scale conversion
+Rscript scripts/18_overlap_bias_bound.R   # LDSC-free sample-overlap-bias bound
+
+# 19–21. Headline figures: leave-one-locus-out forest, urate→gout forest, H2 empirical-C
+python3 scripts/19_produce_loo_figure.py
+python3 scripts/20_produce_urate_gout_figure.py
+python3 scripts/21_h2_empirical_c.py
 ```
 
 Optional: launch the interactive results dashboard.
@@ -144,6 +155,13 @@ streamlit run app/streamlit_app.py
 | `scripts/12_mvmr_lipid_cad.R` | Pre-registered multivariable MR (HDL\|TG,LDL → CAD) | `outputs/tables/mvmr_lipid_cad.csv` |
 | `scripts/13_susie_coloc_lpa.R` | SuSiE-based multi-variant colocalisation for Lp(a) → CAVS LPA region | `outputs/tables/susie_coloc_lpa.csv` |
 | `scripts/14_produce_manuscript_figures.py` | Figures 1 (PRISMA), 2 (headline forest), 3 (H2 strip) | 3 PNGs at `outputs/figures/figure_{1,2,3}_*.png` |
+| `scripts/15_loo_urate_locus.R` | Leave-ABCG2/SLC2A9-out IVW + per-locus Wald for urate→gout | `outputs/tables/urate_locus_leaveout.csv`, `urate_locus_wald.csv` |
+| `scripts/16_tost_equivalence.R` | TOST equivalence test per cross-ancestry pair | `outputs/tables/tost_equivalence.csv` |
+| `scripts/17_liability_scale.R` | Liability- and risk-difference-scale conversion (urate→gout) | `outputs/tables/liability_scale_urate_gout.csv` |
+| `scripts/18_overlap_bias_bound.R` | LDSC-free sample-overlap-bias bound (Burgess 2016) | `outputs/tables/overlap_bias_bound.csv` |
+| `scripts/19_produce_loo_figure.py` | Leave-one-locus-out forest (Fig 3 in the JHG render) | `outputs/figures/figure_loo_urate.png` |
+| `scripts/20_produce_urate_gout_figure.py` | Urate→gout cross-ancestry forest (Fig 2) | `outputs/figures/figure_2_urate_gout_cross_ancestry.png` |
+| `scripts/21_h2_empirical_c.py` | H2 empirical-C sample-overlap analysis + figure | `outputs/tables/h2_empirical_c*.csv`, `outputs/figures/figure_3_h2_empirical_c.png` |
 | `scripts/utils.R` | Shared helpers: paths, schema-aware sumstats readers, LD canonicalisation | — |
 | `scripts/audit_data_presence.sh` | Verify every required input file exists + parses | exit 0 = clean |
 | `tests/test_parsers.R` | Smoke tests for the 10 schema-aware sumstats parsers | console output |
