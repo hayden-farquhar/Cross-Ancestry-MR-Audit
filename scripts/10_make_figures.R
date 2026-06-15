@@ -25,7 +25,11 @@ suppressPackageStartupMessages({
 )
 
 draw_pair_forest <- function(pair_name, mr_dt) {
-  d <- mr_dt[grepl(paste0("^", pair_name, "_"), pair) & method %in% .CAUSAL_METHODS]
+  # Exact ancestry-suffix match (NOT a prefix grepl): a prefix match on e.g.
+  # "URATE_GOUT" would also pull in the sensitivity variants URATE_GOUT_TRANS_EUR
+  # and URATE_GOUT_EAS2, contaminating the canonical EUR vs EAS forest.
+  d <- mr_dt[pair %in% paste0(pair_name, "_", c("EUR", "EAS", "AFR")) &
+               method %in% .CAUSAL_METHODS]
   if (nrow(d) == 0) return(invisible(NULL))
   d <- d[!is.na(b) & !is.na(se)]
   if (nrow(d) == 0) return(invisible(NULL))
@@ -95,6 +99,7 @@ if (file.exists(mr_path)) {
   mr_dt <- fread(mr_path)
   # Identify unique pair_root values (strip trailing ancestry suffix)
   pair_roots <- unique(sub("_(EUR|EAS|AFR)$", "", mr_dt$pair))
+  pair_roots <- pair_roots[!grepl("_TRANS$|EAS2$", pair_roots)]
   for (pr in pair_roots) draw_pair_forest(pr, mr_dt)
   cat(sprintf("Wrote %d forest plots to %s\n",
               length(pair_roots), paths$outputs_figs))
